@@ -11,15 +11,15 @@ function travar(asd) {
   if (asd === true) {
     if (!trava) {
       trava = true;
-      console.log('[FuckGov] - [ANTI-DUB]: TRAVA ATIVADA!');
+      console.log('[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA ATIVADA!');
       setTimeout(() => {
         trava = false;
-        console.log('[FuckGov] - [ANTI-DUB]: TRAVA DESATIVADA!')
+        console.log('[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA DESATIVADA!')
       }, 8000);
     }
   } else if (typeof asd === 'boolean') {
     trava = asd;
-    console.log(`[FuckGov] - [ANTI-DUB]: TRAVA SETADA PARA ${asd.toString().toUpperCase()}`);
+    console.log(`[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA SETADA PARA ${asd.toString().toUpperCase()}`);
   }
 }
 
@@ -88,8 +88,8 @@ function Atividade(Titulo, Atividade, tempo = 2500) {
         })
     }, tempo);
 }
-Atividade("SISTEMA","Vamos Lá Fuder o Sistema",5000);
-Atividade("SISTEMA", "by 1nsta",5000);
+Atividade("SISTEMA","Sistema de prova antigo caiu, mas ja fiz um novo :)",5000);
+Atividade("SISTEMA", "Para mais informações entre no nosso discord",5000);
 document.getElementById('Enviar').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -139,9 +139,8 @@ function sendRequest() {
   }
 }
 async function fetchProva(token, room, name, groups, nick) {
-  Atividade('PROVA-PAULISTA', 'SISTEMA DESATIVADO ATÉ 09/06', 5000);
-  return;
-
+  //Atividade('PROVA-PAULISTA', 'SISTEMA DESATIVADO ATÉ 09/06', 5000);
+  //return;
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -160,13 +159,6 @@ async function fetchProva(token, room, name, groups, nick) {
 
     const data = await response.json();
     console.log(data);
-    /*const atividadesValidas = data.filter(item => {
-      const expireAt = new Date(item.updated_at);
-      const currentDate = new Date();
-      const diff = currentDate - expireAt;
-      return diff < 24 * 60 * 60 * 1000;
-    });*/
-
     if (data && data.length > 0) {
       const config = await solicitarProva(data);
       
@@ -195,6 +187,11 @@ async function fetchProva(token, room, name, groups, nick) {
           }
 
           const extraidoA = await response.json();
+          console.log(extraidoA);          
+          if (extraidoA.status === 203) {
+            Atividade('PROVA-PAULISTA', '⏳ PROVA EM PROCESSO AGUARDE!!!');
+            return;
+          }
           const respostaExtraida = extraidoA.json;
           const NotaTotal = Object.keys(respostaExtraida.answers).length;
           clearInterval(intervaloMensagem);
@@ -306,7 +303,7 @@ async function fetchUserRooms(token,nick) {
       Atividade('TAREFA-SP', 'Procurando atividades...');
     const fetchPromises = data.rooms.map(room => {
       if (correct) {
-        return fetchTeste(token, room.name, room.topic, room.group_categories,nick);
+        //return fetchTeste(token, room.name, room.topic, room.group_categories,nick);
       } else if (prova) {
         return fetchProva(token,room.name,room.topic,room.group_categories,nick);
       } else {
