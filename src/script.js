@@ -11,15 +11,15 @@ function travar(asd) {
   if (asd === true) {
     if (!trava) {
       trava = true;
-      console.log('[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA ATIVADA!');
+      console.log('[FuckGov] - [ANTI-DUB]: TRAVA ATIVADA!');
       setTimeout(() => {
         trava = false;
-        console.log('[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA DESATIVADA!')
+        console.log('[FuckGov] - [ANTI-DUB]: TRAVA DESATIVADA!')
       }, 8000);
     }
   } else if (typeof asd === 'boolean') {
     trava = asd;
-    console.log(`[CEBOLITOS_CLOUD] - [ANTI-DUB]: TRAVA SETADA PARA ${asd.toString().toUpperCase()}`);
+    console.log(`[FuckGov] - [ANTI-DUB]: TRAVA SETADA PARA ${asd.toString().toUpperCase()}`);
   }
 }
 
