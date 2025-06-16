@@ -1,58 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>FuckGov</title>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="icon" type="image/png" href="https://i.imgur.com/Mn75Dn1.jpeg">
-
-    <!-- META PRO PREVIEW (compartilhamento, Discord, WhatsApp, etc) -->
-    <meta property="og:title" content="FuckGov">
-    <meta property="og:description" content="script para fazer a prova paulista e tarefas">
-    <meta property="og:url" content="https://fuck-gov.vercel.app/">
-    <meta property="og:image" content="https://i.imgur.com/Mn75Dn1.jpeg">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gabaritus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section id="centralizar">
-        <div id="form">
-            <h1>FuckGov</h1>
-            <form id="Enviar">
-                <input type="text" id="ra" placeholder="Ex: 00011198235xSP" required>
+  <!-- Splash de boas-vindas -->
+  <div class="splash">
+    <div class="splash-box">
+      <h2>Bem-vindo ao Gabaritus! 🌙</h2>
+      <p>Carregando sua experiência mágica...</p>
+    </div>
+  </div>
 
-                <div class="Mostrar">
-                    <input type="password" id="senha" placeholder="Senha" required>
-                    <button type="button" id="VerSenha">
-                        <img src="olho.png" alt="VerSenha" id="OlhoVer">
-                    </button>
-                </div>          
-                <button id="Logar" type="submit">Realizar atividades</button>
-                <button id="Corrigir" type="submit">Corrigir atividades</button>
-                <button id="prova" type="submit">Enviar Prova Paulista</button>  
-            </form>
-            
-            <br>
+  <div class="logo">
+    <img src="https://i.imgur.com/IKIFKQV.png" alt="MoonScripts logo" />
+  </div>
 
-            <div id="ajuste">
-                <a href="https://github.com/01nstagram" target="_blank">
-                    <div id="git" style="background-image: url(github.png);">
-                    </div>
-                </a>
-                <p>by 1nstagram</p>
-            </div>
-        </div>    
-        
-        <article id="TamanhoN">
-        </article>
-        
-        
-    </section>
-    
-    <script src="src/script.js"></script>
-    <script src="src/modal.js"></script>
+  <h1>GABARITUS</h1>
+  <form id="Enviar">
+    <div class="container">
+      <input type="text" class="input-box" id="user" placeholder="Ex: 00011198235xSP" />
+
+      <div class="password-wrapper">
+        <input type="password" id="senha" class="input-box" placeholder="Digite Sua Senha" />
+        <span class="eye-icon" id="showPass">👁️</span>
+      </div>
+
+      <button class="btn" type="submit" id="Tarefa">REALIZAR ATIVIDADES</button>
+      <button class="btn" type="submit" id="Prova">REALIZAR PROVA PAULISTA</button>
+      <button class="btn" type="submit" id="verProva">VER PROVAS</button>
+    </div>
+  </form>
+  <div class="footer">
+  <a href="https://discord.gg/GNTUuP6Uyp" target="_blank" rel="noopener noreferrer">
+    Discord
+  </a>
+</div>
+  <article id="TamanhoN">
+  </article>
+  <script src="menus.js"></script>
+  <script src="utils.js"></script>
+  <script src="script.js"></script>
+  
+
 </body>
 </html>
